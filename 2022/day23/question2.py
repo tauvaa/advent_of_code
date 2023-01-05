@@ -1,3 +1,4 @@
+import datetime as dt
 import os
 
 
@@ -24,16 +25,16 @@ class Grid:
             "SE": (1, 1),
         }
         self.propse_directions = ["N", "S", "W", "E"]
-        self.elf_positions = []
+        self.elf_positions = set()
         self.get_elf_positions()
 
     def get_elf_positions(self):
-        self.elf_positions = [
+        self.elf_positions = set([
             (x, y)
             for x in range(len(self.data))
             for y in range(len(self.data[0]))
             if self.data[x][y] == "#"
-        ]
+        ])
 
     def propose_move(self, point, direction):
         if direction == "N":
@@ -115,7 +116,7 @@ class Grid:
         for old in valid_moves:
             self.elf_positions.remove(old)
         for new in valid_moves.values():
-            self.elf_positions.append(new)
+            self.elf_positions.add(new)
 
         self.propse_directions = [
             self.propse_directions[(i + 1) % len(self.propse_directions)]
