@@ -25,7 +25,7 @@ def is_caps(instring):
 def get_paths(data):
     """
     Have a structure like:
-        [current path, visitied points]
+        [current path (list), visitied points (dict)]
     """
     visited_paths = {}
     for d in data:
