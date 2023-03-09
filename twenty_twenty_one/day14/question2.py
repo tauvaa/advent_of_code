@@ -50,8 +50,6 @@ if __name__ == "__main__":
     pol = Poly(data, start, start_string)
     for _ in range(40):
         pol.next_step()
-    print(pol.pairs)
-    print(pol.all_letters)
     pairs = [(v, k) for k, v in pol.all_letters.items()]
     pairs.sort()
     mx, mn = pairs[-1], pairs[0]
