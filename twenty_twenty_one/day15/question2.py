@@ -99,7 +99,6 @@ class Grid:
 
 if __name__ == "__main__":
     data = get_data()
-    # print(make_grid(data))
     data = make_grid(data)
     grid = Grid(data)
     grid.find_path()
