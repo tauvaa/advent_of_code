@@ -116,12 +116,11 @@ def corner_order(corner, points):
     return 0
 
 
-
 def corner_counter(points):
     all_corners = get_all_possible_corners(get_row_col_extreams(points))
     total = 0
     for c in all_corners:
-        total+= corner_order(c, points)
+        total += corner_order(c, points)
     return total
 
 
